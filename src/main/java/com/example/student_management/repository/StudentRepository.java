@@ -1,0 +1,10 @@
+package com.example.student_management.repository;
+
+import com.example.student_management.entity.Student;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import java.util.List;
+
+public interface StudentRepository extends MongoRepository<Student, String> {
+    List<Student> findByName(String name);
+    List<Student> findByCourse(String course);
+}
